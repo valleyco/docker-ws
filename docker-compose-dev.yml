@@ -1,0 +1,5 @@
+version: "3.9"
+services:
+  webapp:
+    volumes: 
+      - ./web/:/usr/share/nginx/html/
