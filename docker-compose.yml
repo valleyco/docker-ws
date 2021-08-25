@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  webapp:
+    ports: 
+      - 8080:80 #order is opposite from docker cli
+    build:
+      context: ./
+      dockerfile: ./docker/nginx/Dockerfile
+    image: nginx_ws_static  
