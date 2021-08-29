@@ -6,4 +6,17 @@ services:
     build:
       context: ./
       dockerfile: ./docker/nginx/Dockerfile
-    image: nginx_ws_static  
+    image: nginx_ws_static
+    environment: 
+      WEB_DOCUMENT_ROOT: /usr/share/nginx/html
+      PHP_FPM_HOST: php-fpm
+      BASE_URL: /home
+      
+
+  php-fpm:
+    image: php:7.4-fpm
+    ports: 
+      - 9000:9000
+    volumes:
+      - ./docker/php/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf  
+      - ./web/:/usr/share/nginx/html/
