@@ -6,7 +6,7 @@ services:
     build:
       context: ./
       dockerfile: ./docker/nginx/Dockerfile
-    image: nginx_ws_static
+    image: docker_ws/nginx_ws_static:1.2
     environment: 
       WEB_DOCUMENT_ROOT: /usr/share/nginx/html
       PHP_FPM_HOST: php-fpm
